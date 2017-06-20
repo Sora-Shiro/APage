@@ -2,9 +2,20 @@
 .ul-change-dot {
   background: #66ccff;
   list-style-type: square;
+  line-height: 35px;
 }
 
 .ol-change-number {
   background: #ee82ee;
   list-style-type: upper-roman;
+  line-height: 35px;
+}
+
+.about-list-style-type {
+  background: #66ccff;
+  padding-top: 15px;
+  padding-bottom: 15px;
+  padding-left: 30px;
+  padding-right: 30px;
+  margin-top: 50px;
 }
