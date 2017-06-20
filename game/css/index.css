@@ -1,8 +1,10 @@
 
 .ul-change-dot {
-  background: #66ccff
+  background: #66ccff;
+  list-style-type: square;
 }
 
 .ol-change-number {
-  background: #ee82ee
+  background: #ee82ee;
+  list-style-type: upper-roman;
 }
