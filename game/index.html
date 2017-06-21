@@ -40,7 +40,17 @@
     <p><img title="熊猫" src="image/panda_1.jpg" height="auto" length="auto" style="vertical-align:middle;" alt="熊猫"/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;熊猫也是猫（其实是熊科）</p>
     <p>img 标签的 src 属性，第一个字符不能是 / 啊原来；顺带一提，图片的后缀名也得写清楚才行。</p>
     <p>文字居中要在 img 属性里设置 style ，而<strong> style 属性规定元素的行内样式（inline style）</strong>，有点懵。</p>
-    <p>（或许我该试试用<strong>表格并列</strong>）</p>
+    <p>或许我该试试用<strong>表格</strong>：</p>
+    <table border="1" class="tb-panda">
+      <tr>
+        <th class="th-panda" colspan="1">图片</th>
+        <th class="th-panda" rowspan="1">说明</th>
+      </tr>
+      <tr>
+        <td class="td-panda"><img title="熊猫" src="image/panda_1.jpg" height="auto" length="auto" style="vertical-align:middle;" alt="熊猫"/></td>
+        <td class="td-panda">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;熊猫也是猫（其实是熊科）&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td>
+      </tr>
+    </table>
   </div>
 
   <hr />
@@ -66,15 +76,21 @@
     <p>走着瞧。</p>
   </div>
 
+  <hr />
+
   <div class="17-6-20">
     <h2>2017.6.20</h2>
   </div>
+
+  <hr />
 
   <p>关于前端，我目前处于瞎jb学的阶段。</p>
 
   <p>我会尝试做点东西，不断 commit、push，每天完善一下这个页面。</p>
 
   <p>先熟悉一下基本的东西。</p>
+
+  <hr />
 
   <ul class="ul-change-dot">
     <li>这是无序列表，让我看看能不能改变</li>
@@ -88,6 +104,8 @@
     <li>嗯？</li>
   </ol>
 
+  <hr />
+
   <p>其实以前就接触过一点前端，但当时觉得这玩意儿怎么没有 IDE，标签样式这些没有一个概览窗口查看，很吃力。</p>
   <p>WebStorm 似乎是个好东西，但它<strong>不是</strong>免费的，破解的估计不太稳定，最后查了一下发现其实有公开密钥可用。</p>
   <p>……</p>
@@ -99,6 +117,8 @@
     <p>但是为了好的语义，还是要在适当的地方用适当的标签，毕竟多一个 list-style-type，挺浪费时间，也不利于网页分析。</p>
     <p>“好的语义就是<strong> SEO </strong><i>（搜索引擎优化（Search Engine Optimization）的英文缩写）</i>。”</p>
   </div>
+
+  <hr />
 
 
 </body>

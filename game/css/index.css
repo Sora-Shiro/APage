@@ -1,5 +1,19 @@
 body {
   margin-left: 35px;
+  margin-right: 35px;
+}
+
+.tb-panda {
+  border-collapse: collapse;
+  border-spacing: 6px;
+}
+
+.th-panda {
+  padding: 8px;
+}
+
+.td-panda {
+  padding: 10px;
 }
 
 .about-after {
@@ -34,4 +48,5 @@ body {
   padding-left: 30px;
   padding-right: 30px;
   margin-top: 50px;
+  margin-bottom: 25px;
 }
