@@ -1,3 +1,19 @@
+body {
+  margin-left: 35px;
+}
+
+.about-after {
+  background: #66ccff;
+  padding-top: 15px;
+  padding-bottom: 15px;
+  padding-left: 30px;
+  padding-right: 30px;
+  margin-top: 50px;
+}
+
+.extra-learn {
+  font-style: italic;
+}
 
 .ul-change-dot {
   background: #66ccff;
