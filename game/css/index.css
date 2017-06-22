@@ -3,6 +3,14 @@ body {
   margin-right: 35px;
 }
 
+ul {
+  line-height: 35px;
+}
+
+ol {
+  line-height: 35px;
+}
+
 .tb-panda {
   border-collapse: collapse;
   border-spacing: 6px;

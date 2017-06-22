@@ -14,152 +14,194 @@
 </head>
 
 <body>
+  
+  <div class="learn-17-6-22">
+    <div class="17-6-22">
+      <h2>2017.6.22</h2>
+    </div>
 
-  <div class="17-6-22">
-    <h2>2017.6.22</h2>
-  </div>
+    <hr />
 
-  <p>第三天。</p>
-  <p>现在是<a href="https://www.codecademy.com/learn"> Code Cademy </a>和<a href="http://www.w3school.com.cn/html/html_formatting.asp"> W3C School </a>一起看学习着 HTML 。</p>
+    <p>第三天。</p>
+    <p>现在是<a href="https://www.codecademy.com/learn"> Code Cademy </a>和<a href="http://www.w3school.com.cn/html/html_formatting.asp"> W3C School </a>一起看学习着 HTML 。</p>
 
-  <hr />
+    <hr />
 
-  <ul>
-    <li>
-      <p><a href="http://www.w3school.com.cn/tags/tag_phrase_elements.asp">pre</a> 标签很适合显示计算机代码：</p>
-      <pre>int a = 0;</pre>
-      <p>但是没有<strong> 关键词高亮 </strong>功能诶。</p>
-    </li>
-    <li>
-      <p>code 标签，看起来一样：</p>
-      <code>
-        int b = 1;
-      </code>
-      <p>常常和 pre、var 结合使用，为了更好的语义，适当地用好这些标签也是很有必要的。</p>
-    </li>
-    <li>
+    <ul>
+      <li>
+        <p><a href="http://www.w3school.com.cn/tags/tag_phrase_elements.asp">pre</a> 标签很适合显示计算机代码：</p>
+        <pre>int a = 0;</pre>
+        <p>但是没有<strong> 关键词高亮 </strong>功能诶。</p>
+      </li>
+      <li>
+        <p>code 标签，看起来一样：</p>
+        <code>
+          int b = 1;
+        </code>
+        <p>常常和 pre、var 结合使用，<strong>为了更好的文档语义</strong>，适当地用好这些标签也是很有必要的。我在此发现了 HTML 的有趣之处。</p>
+      </li>
+      <li>
         <a href="http://www.w3school.com.cn/tags/tag_cite.asp">
           <cite>
             这是超链接标签 a 和引用标签 cite 内的文字。
           </cite>
         </a>
       </li>
-  </ul>
-  
-  <hr />
-
-  <p>由于点击超链接的时候会在当前页面跳转，我想让它自动新建窗口跳转，于是搜了搜，发现最简单的方法是在 head 标签里加上<pre> &lt;<a href="http://www.w3school.com.cn/tags/tag_base.asp">base</a> target="_blank" /&gt; </pre> 就行了</p>
-  <p>还有一种是<a href="http://www.knowsky.com/536618.html">用 JavaScript 动态修改</a>，麻烦了些。</p>
-
-  <hr />
-
-  <div class="17-6-21">
-    <h2>2017.6.21</h2>
-  </div>
-
-  <hr />
-
-  <p>好，今天是第二天。</p>
-  <p>尝试一下<strong> 超链接 </strong>和<strong> 图片 </strong>吧。</p>
-
-  <div class="tag-a">
-    <p>
-      <a href="http://www.w3school.com.cn/html/html_styles.asp">避免使用的标签和属性</a>
-    </p>
-    <p>
-      <a href="https://www.google.com">谷歌一下</a>
-    </p>
-    <p href="http://www.w3school.com.cn">让我看看 p 标签能不能用超链接功能，好吧，不行。</p>
-  </div>
-
-  <hr />
-
-  <div class="tag-img">
-    <p>该放个图片了。</p>
-    <p>电脑里存有很多猫图，放一只吧。</p>
-    <p><img title="熊猫" src="image/panda_1.jpg" height="auto" length="auto" style="vertical-align:middle;" alt="熊猫"/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;熊猫也是猫（其实是熊科）</p>
-    <p>img 标签的 src 属性，第一个字符不能是 / 啊原来；顺带一提，图片的后缀名也得写清楚才行。</p>
-    <p>文字居中要在 img 属性里设置 style ，而<strong> style 属性规定元素的行内样式（inline style）</strong>，有点懵。</p>
-    <p>或许我该试试用<strong>表格</strong>：</p>
-    <table border="1" class="tb-panda">
-      <tr>
-        <th class="th-panda" colspan="1">图片</th>
-        <th class="th-panda" rowspan="1">说明</th>
-      </tr>
-      <tr>
-        <td class="td-panda"><img title="熊猫" src="image/panda_1.jpg" height="auto" length="auto" style="vertical-align:middle;" alt="熊猫"/></td>
-        <td class="td-panda">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;熊猫也是猫（其实是熊科）&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td>
-      </tr>
-    </table>
-  </div>
-
-  <hr />
-
-  <div>
-    <p  class="extra-learn"><strong>额外的东西</strong></p>
-
-    <!--学到现在不会注释说不过去吧！-->
-    <ul>
       <li>
-        <p  title="啊！！！！！！！！！！！！！！！">把鼠标放在<i>这句话</i>上试试（其实我很奇怪为什么这个属性名叫 title 而不是 hint 之类的）。</p>
+        <a href="http://www.w3school.com.cn/tags/tag_address.asp">address</a> 标签和 <a href="http://www.w3school.com.cn/tags/tag_footer.asp">footer</a> 标签配合使用，一般放在网页底部，显示版权信息之类的。
       </li>
       <li>
-        <p>b vs strong， i vs em，这两个标签视觉效果是一样的，但是 SEO 会在搜索权重上更侧重于后者。</p>
+        <a href="http://www.w3school.com.cn/tags/tag_acronym.asp"><abbr title="首字母缩略词">acronym</abbr> </a>和 <a href="http://www.w3school.com.cn/tags/tag_abbr.asp"><abbr title="abbreviation">abbr</abbr></a> 都是表示缩写，不过 H5 不支持前者，所以一律用后者比较靠谱。
+      </li>
+      <li>
+        <p>这是长的引用：</p>
+        <blockquote>
+        这是长的引用。这是长的引用。这是长的引用。这是长的引用。这是长的引用。这是长的引用。这是长的引用。这是长的引用。这是长的引用。这是长的引用。这是长的引用。
+        </blockquote>
+        <p>这是短的引用：</p>
+        <q>
+        这是短的引用。
+        </q>
+        <p>
+        使用 blockquote 元素的话，浏览器会插入换行和外边距，而 q 元素不会有任何特殊的呈现。
+        </p>
+      </li>
+      <li>
+        <p>一打有 <del>二十</del> <ins>十二</ins> 件。</p>
+
+        <p>大多数浏览器会改写为删除文本和下划线文本。</p>
+
+        <p>一些老式的浏览器会把删除文本和下划线文本显示为普通文本。</p>
       </li>
     </ul>
     
+    <hr />
+
+    <p>由于点击超链接的时候会在当前页面跳转，我想让它自动新建窗口跳转，于是搜了搜，发现最简单的方法是在 head 标签里加上<code> &lt;<a href="http://www.w3school.com.cn/tags/tag_base.asp">base</a> target="_blank" /&gt; </code> 就行了。</p>
+    <p>还有一种是<a href="http://www.knowsky.com/536618.html">用 JavaScript 动态修改</a>，麻烦了些。</p>
+
+    <div class="about-after">
+      
+      <p>和 <a href="https://github.com/F-star">F-star</a> 讨论了一下 <b><i>自定义标签</i></b>，参考了MDN的 <a href="https://developer.mozilla.org/zh-CN/docs/Web/Web_Components/Custom_Elements">自定义元素（Custom Elements）</a>、<a href="https://developer.mozilla.org/en-US/docs/Web/API/Document/registerElement">Document.registerElement()</a>、<a href="https://developer.mozilla.org/en-US/docs/Web/API/CustomElementRegistry/define">CustomElementRegistry.define()</a> 后，发现这个特性还不太稳定，兼容性不强，平时可以当制作密码一样玩玩。</p>
+
+    </div>
+
   </div>
+
+  <hr />
   
-  <div class="about-after">
-    <p>我想再过不久就得自己弄个<strong>目录</strong>了，它应该有一个<strong>标签功能</strong>，<strong>点击</strong>后能<strong>定位</strong>到指定位置。</p>
-    <p>这样的话要开始用JavaScript了。</p>
-    <p>走着瞧。</p>
+  <div class="learn-17-6-21">
+    <div class="17-6-21">
+      <h2>2017.6.21</h2>
+    </div>
+
+    <hr />
+
+    <p>好，今天是第二天。</p>
+    <p>尝试一下<strong> 超链接 </strong>和<strong> 图片 </strong>吧。</p>
+
+    <div class="tag-a">
+      <p>
+        <a href="http://www.w3school.com.cn/html/html_styles.asp">避免使用的标签和属性</a>
+      </p>
+      <p>
+        <a href="https://www.google.com">谷歌一下</a>
+      </p>
+      <p href="http://www.w3school.com.cn">让我看看 p 标签能不能用超链接功能，好吧，不行。</p>
+    </div>
+
+    <hr />
+
+    <div class="tag-img">
+      <p>该放个图片了。</p>
+      <p>电脑里存有很多猫图，放一只吧。</p>
+      <p><img title="熊猫" src="image/panda_1.jpg" height="auto" length="auto" style="vertical-align:middle;" alt="熊猫"/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;熊猫也是猫（其实是熊科）</p>
+      <p>img 标签的 src 属性，第一个字符不能是 / 啊原来；顺带一提，图片的后缀名也得写清楚才行。</p>
+      <p>文字居中要在 img 属性里设置 style ，而<strong> style 属性规定元素的行内样式（inline style）</strong>，有点懵。</p>
+      <p>或许我该试试用<strong>表格</strong>：</p>
+      <table border="1" class="tb-panda">
+        <tr>
+          <th class="th-panda" colspan="1">图片</th>
+          <th class="th-panda" rowspan="1">说明</th>
+        </tr>
+        <tr>
+          <td class="td-panda"><img title="熊猫" src="image/panda_1.jpg" height="auto" length="auto" style="vertical-align:middle;" alt="熊猫"/></td>
+          <td class="td-panda">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;熊猫也是猫（其实是熊科）&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td>
+        </tr>
+      </table>
+    </div>
+
+    <hr />
+
+    <div>
+      <p  class="extra-learn"><strong>额外的东西</strong></p>
+
+      <!--学到现在不会注释说不过去吧！-->
+      <ul>
+        <li>
+          <p  title="啊！！！！！！！！！！！！！！！">把鼠标放在<i>这句话</i>上试试（其实我很奇怪为什么这个属性名叫 title 而不是 hint 之类的）。</p>
+        </li>
+        <li>
+          <p>b vs strong， i vs em，这两个标签视觉效果是一样的，但是 SEO 会在搜索权重上更侧重于后者。</p>
+        </li>
+      </ul>
+      
+    </div>
+    
+    <div class="about-after">
+      <p>我想再过不久就得自己弄个<strong>目录</strong>了，它应该有一个<strong>标签功能</strong>，<strong>点击</strong>后能<strong>定位</strong>到指定位置。</p>
+      <p>这样的话要开始用JavaScript了。</p>
+      <p>走着瞧。</p>
+    </div>
   </div>
 
   <hr />
 
-  <div class="17-6-20">
-    <h2>2017.6.20</h2>
+  <div class="learn-17-6-20">
+    
+    <div class="17-6-20">
+      <h2>2017.6.20</h2>
+    </div>
+
+    <hr />
+
+    <p>关于前端，我目前处于瞎jb学的阶段。</p>
+
+    <p>我会尝试做点东西，不断 commit、push，每天完善一下这个页面。</p>
+
+    <p>先熟悉一下基本的东西。</p>
+
+    <hr />
+
+    <ul class="ul-change-dot">
+      <li>这是无序列表，让我看看能不能改变</li>
+      <li>这些列表项的</li>
+      <li>左边的点的样式</li>
+    </ul>
+
+    <ol class="ol-change-number">
+      <li>这是有序列表，我看看能不能</li>
+      <li>把列表项改成罗马数字</li>
+      <li>嗯？</li>
+    </ol>
+
+    <hr />
+
+    <p>其实以前就接触过一点前端，但当时觉得这玩意儿怎么没有 IDE，标签样式这些没有一个概览窗口查看，很吃力。</p>
+    <p>WebStorm 似乎是个好东西，但它<strong>不是</strong>免费的，破解的估计不太稳定，最后查了一下发现其实有公开密钥可用。</p>
+    <p>……</p>
+    <p>想了想自己的基础还<u>不太行</u>，先用<i> Sublime Text </i>码着吧。</p>
+
+    <div class="about-list-style-type">
+      <p>用 Zeal 翻了翻 CSS 的 list-style-type，原来列表样式可以改这么多，改完以后，开始好奇浏览器是如何解释CSS的。</p>
+      <p>list-style-type 似乎只是改变li标签的表示方式（严格来说，只要某个标签的 property 中 display 值是 list-item 的都会被这么处理），那么也就是说，ol 和 ul 完全可以通过 list-style-type 相互转换。</p>
+      <p>但是为了好的语义，还是要在适当的地方用适当的标签，毕竟多一个 list-style-type，挺浪费时间，也不利于网页分析。</p>
+      <p>“好的语义就是<strong> SEO </strong><i>（搜索引擎优化（Search Engine Optimization）的英文缩写）</i>。”</p>
+    </div>
+
   </div>
 
   <hr />
-
-  <p>关于前端，我目前处于瞎jb学的阶段。</p>
-
-  <p>我会尝试做点东西，不断 commit、push，每天完善一下这个页面。</p>
-
-  <p>先熟悉一下基本的东西。</p>
-
-  <hr />
-
-  <ul class="ul-change-dot">
-    <li>这是无序列表，让我看看能不能改变</li>
-    <li>这些列表项的</li>
-    <li>左边的点的样式</li>
-  </ul>
-
-  <ol class="ol-change-number">
-    <li>这是有序列表，我看看能不能</li>
-    <li>把列表项改成罗马数字</li>
-    <li>嗯？</li>
-  </ol>
-
-  <hr />
-
-  <p>其实以前就接触过一点前端，但当时觉得这玩意儿怎么没有 IDE，标签样式这些没有一个概览窗口查看，很吃力。</p>
-  <p>WebStorm 似乎是个好东西，但它<strong>不是</strong>免费的，破解的估计不太稳定，最后查了一下发现其实有公开密钥可用。</p>
-  <p>……</p>
-  <p>想了想自己的基础还<u>不太行</u>，先用<i> Sublime Text </i>码着吧。</p>
-
-  <div class="about-list-style-type">
-    <p>用 Zeal 翻了翻 CSS 的 list-style-type，原来列表样式可以改这么多，改完以后，开始好奇浏览器是如何解释CSS的。</p>
-    <p>list-style-type 似乎只是改变li标签的表示方式（严格来说，只要某个标签的 property 中 display 值是 list-item 的都会被这么处理），那么也就是说，ol 和 ul 完全可以通过 list-style-type 相互转换。</p>
-    <p>但是为了好的语义，还是要在适当的地方用适当的标签，毕竟多一个 list-style-type，挺浪费时间，也不利于网页分析。</p>
-    <p>“好的语义就是<strong> SEO </strong><i>（搜索引擎优化（Search Engine Optimization）的英文缩写）</i>。”</p>
-  </div>
-
-  <hr />
-
 
 </body>
 
