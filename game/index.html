@@ -15,9 +15,65 @@
 
 <body>
   
+  <div class="learn-17-6-23">
+    <div class="17-6-23">
+      <a name="bookmark-17-6-23"><h2>2017.6.23</h2></a>
+    </div>
+
+    <hr />
+
+    <p>首先写一段鬼畜的东西：</p>
+    <bdo dir="rtl">
+      bdo 标签的作用就是逆序显示文字，不过只有部分浏览器支持。
+    </bdo>
+    <p>今天补充一下超链接的知识吧，顺带学点有趣的东西。</p>
+
+    <hr />
+
+    <ul>
+      <li>
+        <p>
+          这是一个没有下划线的<a href="https://sora-shiro.github.io/APage/game/" style="text-decoration:none">超链接</a>，通过 style="text-decoration:none" 实现。<br />
+          当然，既然有下划线，那么有<a href="https://sora-shiro.github.io/APage/game/"  style="text-decoration:overline">上划线</a>也很正常，通过style="text-decoration:overline" 实现（但我实在是想不出有什么要用到的地方）。<br />
+          <a href="#bookmark-17-6-20" target="_self" style="text-decoration:none">点击这个超链接可以 瞬 间 跳 转 到大前天的笔记哦</a>。（如果大前天不存在，那么就会定位到文档的顶端，不会有错误发生。）
+        </p>
+      </li>
+      <li>
+        <p>
+          通过使用 map、area 标签，下面的图像可以点击，然后你会直达某个日期的笔记：<br />
+          <map name="learn-map" id="learn-map">
+            <area shape="rect" coords="0, 0, 100, 80" href="#bookmark-17-6-22" target="_self" alt="170622" />
+            <area shape="rect" coords="0, 0, 200, 80" href="#bookmark-17-6-20" target="_self" alt="170620" />
+            <area shape="rect" coords="0, 0, 300, 80" href="#bookmark-17-6-21" target="_self" alt="170621" />
+          </map>
+          <img src="image/learn-map.png" usemap="#learn-map" alt="learn-map-img" /> <br />
+          虽然很好玩，但我觉得这个要和 SVG、Js 配合才能发挥出大威力，动态计算范围比硬编码靠谱多了。
+        </p>
+      </li>
+      <li>
+        <p>
+          iframe 标签可以在网页里再显示网页（很奇迹，不会递归）：<br />
+          <iframe name="inner-page" src="index.html" frameborder="0" width="100%" height="300"></iframe> <br />
+          <a href="#bookmark-17-6-20" target="inner-page">穿越到最初的地方</a>。
+        </p>
+      </li>
+    </ul>
+
+    <div class="about-after">
+      
+      <p>frame 和 frameset 标签都应该避免使用。</p>
+
+    </div>
+
+    
+
+  </div>
+
+  <hr />
+  
   <div class="learn-17-6-22">
     <div class="17-6-22">
-      <h2>2017.6.22</h2>
+      <a name="bookmark-17-6-22"><h2>2017.6.22</h2></a>
     </div>
 
     <hr />
@@ -92,7 +148,7 @@
   
   <div class="learn-17-6-21">
     <div class="17-6-21">
-      <h2>2017.6.21</h2>
+      <a name="bookmark-17-6-21"><h2>2017.6.21</h2></a>
     </div>
 
     <hr />
@@ -160,7 +216,7 @@
   <div class="learn-17-6-20">
     
     <div class="17-6-20">
-      <h2>2017.6.20</h2>
+      <a name="bookmark-17-6-20"><h2>2017.6.20</h2></a>
     </div>
 
     <hr />
