@@ -1,3 +1,7 @@
+header, section, footer, aside, nav, main, article, figure {
+    display: block; 
+}
+
 body {
   margin-left: 35px;
   margin-right: 35px;
@@ -9,6 +13,12 @@ ul {
 
 ol {
   line-height: 35px;
+}
+
+#string-result-17-6-25 {
+  background: #ee82ee;
+  padding-left:10px;
+  padding-right:10px;
 }
 
 .tb-panda {

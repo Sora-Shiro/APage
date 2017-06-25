@@ -1,6 +1,7 @@
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<!DOCTYPE html>
+<!-- <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd"> -->
 
-<html xmlns="http://www.w3.org/1999/xhtml">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="zh-hans">
 
 <head>
   <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
@@ -17,21 +18,92 @@
   <title>Nothing</title>
   <link rel="shortcunt icon" type="image/x-icon" href="image/logo.ico"/>
   <link href="css/index.css" rel="stylesheet" type="text/css"/>
+  <!--[if lt IE 9]>
+    <script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+  <![endif]-->
   <script type="text/javascript" src="js/jquery-3.2.1.js"></script>
   <script type="text/javascript" src="js/velocity.min.js"></script>
+  <script type="text/javascript" src="js/index.js"></script>
 
   <base target="_blank" />
 </head>
 
 <body>
 
-  <p>
-    <a href="http://validator.w3.org/check?uri=referer"><img
-      src="http://www.w3.org/Icons/valid-xhtml10" alt="Valid XHTML 1.0 Transitional" height="31" width="88" /></a>
-  </p>
+  <div class="learn-17-6-25">
+    
+    <div class="title-17-6-25">
+      <h2><a name="bookmark-17-6-25">2017.6.25</a></h2>
+    </div>
+
+    <hr />
+
+    <p>今天重点学习表单。</p>
+
+    <ul>
+      <li><a href="http://www.w3school.com.cn/html/html_form_input_types.asp">input</a>   标签放到下一节讲，这一节先试试其他的标签：<br /> 
+        <form action="" oninput="result.value=message.value+language.value+browser.value" autocomplete="on">
+          <textarea name="message" rows="3" cols="30" style="resize: none;" maxlength="140"></textarea>
+          <select name="language" id="language">
+            <option value="C">C</option>
+            <option value="C++">C++</option>
+            <option value="C#">C#</option>
+            <option value="Python">Python</option>
+            <option value="Java">Java</option>
+            <option value="JavaScript" selected="selected">JavaScript</option>
+          </select>
+          <input list="browsers" name="browser" maxlength="20"/>
+          <datalist id="browsers">
+            <option value="Internet Explorer"/>
+            <option value="Firefox"/>
+            <option value="Chrome"/>
+            <option value="Opera"/>
+            <option value="Safari"/>
+          </datalist>
+          <br />
+          <div id="string-result-17-6-25">
+            <p>这里是上面的文字框里的字符串和单选框里的字符串拼合的结果：
+            <output id="string-result-17-6-25-output" name="result" for="message language"></output>
+            </p>
+          </div>
+          <button type="button" onclick="showOutput()">点我弹出合并结果</button>
+        </form>
+      </li>
+      <li>
+        <form action="">
+          用户名：<input type="text" name="username" maxlength="20"  value="Sora Shiro" />
+          <br />
+          密码：<input id="psw" type="password" name="psw" maxlength="40"/>
+          <br />
+          <button type="button" onclick="showPsw()">点我弹出密码</button>&nbsp;&nbsp;&nbsp;
+          <button type="reset">清空</button>
+        </form>
+      </li>
+      <li>
+        <form id="choose-s-v" action="">
+          <input type="radio" name="sex" value="male" checked="checked"/>男
+          <br />
+          <input type="radio" name="sex" value="female"/>女
+          <br />
+          <input type="checkbox" name="vehicle" value="Bike"/>骑车
+          <br />
+          <input type="checkbox" name="vehicle" value="Car"/>开车
+          <br />
+          <button type="button" onclick="showSexVehicle()">点我弹出已选项</button>
+        </form>
+      </li>
+    </ul>
+
+    <div class="about-after">
+      <p>扩展阅读：<a href="http://www.w3school.com.cn/html/html5_semantic_elements.asp">HTML5语义元素</a>。</p>
+    </div>
+
+  </div>
+
+  <hr />
 
   <div class="learn-17-6-24">
-    <div class="17-6-24">
+    <div class="title-17-6-24">
       <h2><a name="bookmark-17-6-24">2017.6.24</a></h2>
     </div>
 
@@ -58,7 +130,7 @@
   <hr />
   
   <div class="learn-17-6-23">
-    <div class="17-6-23">
+    <div class="title-17-6-23">
       <h2><a name="bookmark-17-6-23">2017.6.23</a></h2>
     </div>
 
@@ -114,7 +186,7 @@
   <hr />
   
   <div class="learn-17-6-22">
-    <div class="17-6-22">
+    <div class="title-17-6-22">
       <h2><a name="bookmark-17-6-22">2017.6.22</a></h2>
     </div>
 
@@ -189,7 +261,7 @@
   <hr />
   
   <div class="learn-17-6-21">
-    <div class="17-6-21">
+    <div class="title-17-6-21">
       <h2><a name="bookmark-17-6-21">2017.6.21</a></h2>
     </div>
 
@@ -256,7 +328,7 @@
 
   <div class="learn-17-6-20">
     
-    <div class="17-6-20">
+    <div class="title-17-6-20">
       <h2><a name="bookmark-17-6-20">2017.6.20</a></h2>
     </div>
 
