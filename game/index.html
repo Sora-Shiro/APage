@@ -15,7 +15,7 @@
   5是刷新等待秒数
   -->
 
-  <title>Nothing</title>
+  <title>Frontend Note</title>
   <link rel="shortcunt icon" type="image/x-icon" href="image/logo.ico"/>
   <link href="css/index.css" rel="stylesheet" type="text/css"/>
   <!--[if lt IE 9]>
@@ -23,6 +23,7 @@
   <![endif]-->
   <script type="text/javascript" src="js/jquery-3.2.1.js"></script>
   <script type="text/javascript" src="js/velocity.min.js"></script>
+  <script type="text/javascript" src="http://mediaplayer.yahoo.com/js"></script>
   <script type="text/javascript" src="js/index.js"></script>
   <script type="text/javascript" src="js/draw.js"></script>
 
@@ -30,6 +31,77 @@
 </head>
 
 <body>
+
+  <hr />
+
+  <div class="learn-17-6-26">
+    
+    <div class="title-17-6-26">
+      <h2><a name="bookmark-17-6-26">2017.6.26</a></h2>
+    </div>
+
+    <hr />
+
+    <p>今天试试处理<a href="http://www.w3school.com.cn/html/html_audio.asp">音频</a>，<a href="http://www.w3school.com.cn/html/html_video.asp">视频</a>和<a href="http://www.w3school.com.cn/html5/html_5_canvas.asp">画布</a>的问题。</p>
+
+    <ul>
+      <li>
+        音频：<br />
+        内联式：<br />
+        <audio controls="controls" height="100" width="100">
+          <source src="sound/陈一发儿 - 童话镇.mp3" type="audio/mp3" />
+          <source src="sound/陈一发儿 - 童话镇.ogg" type="audio/ogg" />
+          <embed height="100" width="100" src="sound/陈一发儿 - 童话镇.mp3" />
+        </audio>
+        <br />
+        新标签页打开：
+        <a href="sound/陈一发儿 - 童话镇.mp3">播放音乐《陈一发儿 - 童话镇》</a>
+      </li>
+      <li>
+        视频：<br />
+        内联式（为了节省空shi间我只放了 OGG 格式视频，兼容性不能保证）：<br />
+        <video width="320" height="240" controls="controls">
+          <source src="movie/movie.mp4" type="video/mp4" />
+          <source src="movie/movie.ogg" type="video/ogg" />
+          <source src="movie/movie.webm" type="video/webm" />
+          <object data="movie/movie.mp4" width="320" height="240">
+            <embed src="movie/movie.swf" width="320" height="240" />
+          </object>
+        </video>
+        <br />
+        或者：<br />
+        <embed src="http://player.youku.com/player.php/sid/XMzI2NTc4NTMy/v.swf" 
+          width="480" height="400" 
+          type="application/x-shockwave-flash">
+        </embed>
+        <br />
+        新标签页打开：
+        <a href="movie/movie.ogg">播放上面的视频</a>
+        </li>
+      <li>
+        画布简单实践：<br />
+        首先创建一个画布，宽 324 像素，高 216 像素：<br />
+        <canvas id="learn-draw-canvas" width="324" height="216"></canvas>
+
+        <p>按下下列按钮就能做对应的事情：</p>
+
+        <button type="button" onclick="clearCanvas()">清空</button>&nbsp;&nbsp;&nbsp;
+        <button type="button" onclick="drawLine()">画一个红色矩形</button>
+      </li>
+    </ul>
+    
+    <div class="about-after">
+      <p>关于 <a href="http://www.w3school.com.cn/css/index.asp">CSS</a>，<a href="http://www.w3school.com.cn/css3/index.asp">CSS3</a>，<a href="http://www.w3school.com.cn/js/index.asp">JavaScript</a> 的实践，我认为和 HTML 不一样，不用把大部分功能都尝试写一遍，要的时候直接翻阅资料，直接用就行，在这个笔记就不赘述了。</p>
+      <p><strong>canvas</strong> 是个很有趣的东西，让我想起之前在 Android 平台上实现的一些自定义 View，这几天看看能不能写个简单的图表。</p>
+      <p>回头见。</p>
+    </div>
+
+
+  </div>
+
+  <hr />
+    
+ 
 
   <div class="learn-17-6-25">
     
@@ -94,19 +166,6 @@
         </form>
       </li>
     </ul>
-
-    <p>
-      趁着今天周日，明天要考试，多写一点吧。<br />
-      画布 canvas 的内容挺多可以实践的，写完移到明天的笔记里比较好。<br />
-      首先创建一个画布，宽 648 像素，高 432 像素：
-    </p>
-
-    <canvas id="learn-draw-canvas" width="648" height="432"></canvas>
-
-    <p>按下下列按钮就能做对应的事情：</p>
-
-    <button type="button" onclick="clearCanvas()">清空</button>&nbsp;&nbsp;&nbsp;
-    <button type="button" onclick="drawLine()">画一个红色矩形</button>
 
     <div class="about-after">
       <p>扩展阅读：<a href="http://www.w3school.com.cn/html/html5_semantic_elements.asp">HTML5语义元素</a>。</p>
