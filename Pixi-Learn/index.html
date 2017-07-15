@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<!-- <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd"> -->
+
+<html xmlns="http://www.w3.org/1999/xhtml" lang="zh-hans">
+
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <meta http-equiv="Content-Language" content="zh-cn" />
+  <meta name="author" content="Sora Shiro"/>
+  <meta name="generator" content="Sublime Text 3"/>
+  <meta name="keywords" content="Pixi"/>
+  <meta name="description" content="Sora Shiro's Pixi Learning"/>
+
+  <title>Pixi Learn</title>
+  <link rel="shortcunt icon" type="image/x-icon" href="image/logo.ico"/>
+  <link href="css/index.css" rel="stylesheet" type="text/css"/>
+  <script type="text/javascript" src="script/jquery-3.2.1.js"></script>
+  <script type="text/javascript" src="script/pixi.js"></script>
+  <script type="text/javascript" src="script/index.js"></script>
+
+  <base target="_blank" />
+</head>
+
+<body>
+  <script>
+    //Create the renderer
+    let renderer = PIXI.autoDetectRenderer(256, 256);
+
+    //Add the canvas to the HTML document
+    document.body.appendChild(renderer.view);
+
+    //Create a container object called the `stage`
+    let stage = new PIXI.Container();
+
+    //Tell the `renderer` to `render` the `stage`
+    renderer.render(stage);
+  </script>
+</body>
+
+</html>
