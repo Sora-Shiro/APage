@@ -1,0 +1,36 @@
+html {
+  height: 100%;
+  width: 100%;
+}
+
+header,
+section,
+footer,
+aside,
+nav,
+main,
+article,
+figure {
+  display: block;
+}
+
+body {
+  margin: 0px;
+  padding-top: 15px;
+  height: 100%;
+  width: 100%;
+}
+
+img {
+  position: absolute;
+  z-index: -2;
+}
+
+#leading_line_canvas {
+  position: absolute;
+  z-index: -1;
+}
+
+div {
+  position: absolute;
+}
