@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<!-- <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd"> -->
+<html xmlns="http://www.w3.org/1999/xhtml" lang="zh-hans">
+
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta http-equiv="Content-Language" content="zh-cn" />
+    <meta name="author" content="???" />
+    <meta name="generator" content="Visual Studio Code" />
+    <meta name="keywords" content="Vue" />
+    <meta name="description" content="Learning in Vue" />
+    <title>Vue Learn</title>
+    <!-- <link rel="shortcunt icon" type="image/x-icon" href="image/logo.ico"/> -->
+    <link href="css/index.css" rel="stylesheet" type="text/css" />
+    <!--[if lt IE 9]>
+    <script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+  <![endif]-->
+    <script type="text/javascript" src="js/vue.js"></script>
+    <script src="https://unpkg.com/vue"></script>
+    <base target="_blank" />
+</head>
+
+<body>
+    <div id="app">
+        <p>{{ message }}</p>
+        <p v-once>{{ once_message }}</p>
+        <textarea v-model="tAreaData" name="changed" :id="tArea" cols="30" rows="10" maxlength="140"></textarea>
+        <button type="button" @click="changeMessage">Change Message</button>
+    </div>
+
+    <script type="text/javascript" src="js/index.js"></script>
+</body>
+
+</html>

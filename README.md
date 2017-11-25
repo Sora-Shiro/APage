@@ -6,4 +6,6 @@ Produce when I learning frontend.
 
 Frontend-Note : https://sora-shiro.github.io/APage/Frontend-Note
 
-GraphMusic : https://sora-shiro.github.io/APage/GraghMusic , which need to download
+GraphMusic : https://sora-shiro.github.io/APage/GraghMusic
+
+VueLearn : https://sora-shiro.github.io/APage/VueLearn
