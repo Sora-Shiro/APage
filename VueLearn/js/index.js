@@ -75,5 +75,38 @@ var watchExampleVM = new Vue({
     }
 });
 
+var classStyleBind = new Vue({
+    el: '#class-style-bind',
+    data: {
+        isActive: true,
+        hasError: false,
+        classObject: {
+            active: true,
+            'text-danger': false
+        },
+        activeColor: 'red',
+        fontSize: 30,
+        styleObject: {
+            color: 'red',
+            fontSize: '13px'
+        },
+    },
+});
 
-
+var conditionalVue = new Vue({
+    el: '#conditional',
+    data: {
+        conditionalOk: true,
+        conditionalNo: false,
+        loginType: 'username',
+    },
+    methods: {
+        changeLoginType: function(event) {
+            if(this.loginType === 'username') {
+                this.loginType = 'email';
+            } else {
+                this.loginType = 'username';
+            }
+        },
+    }
+});

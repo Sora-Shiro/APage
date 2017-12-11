@@ -25,9 +25,8 @@
 
 <body>
 
-    <div id="app_syntax">
-
-        <!--  
+    <h3>Syntax And Computed</h3>
+    <!--  
         reference: https://cn.vuejs.org/v2/guide/syntax.html
         1. 在 vue 中，[el] 与 html 的 div 的 id 绑定
         2. 所有与 vue 相关的 html 插值、v- 前缀特殊属性值可以在 [data] 和 [methods] 中
@@ -36,12 +35,7 @@
         5. 对于所有数值绑定（如第 2 点提到的），vue 提供了 js *表达式*支持
         -->
 
-        <p>Message: {{ message }}</p>
-        <p v-once>Once Message: {{ once_message }}</p>
-        <textarea v-model="tAreaData" name="changed" :id="tArea" cols="30" rows="10" maxlength="140"></textarea>
-        <button type="button" @click="changeMessage">Change Message</button>
-
-        <!--  
+    <!--  
         reference: https://cn.vuejs.org/v2/guide/computed.html
         1. vue 中，[computed] 中的属性会监视着，它依赖的其他 [data] 属性，
         比如 reverseMessage 依赖于 message，所以当 message 变化时 reverseMessage 也会
@@ -49,24 +43,90 @@
         *缓存功能*，这可以防止后台重复地复杂计算
         2. [computed] 中的属性默认是只读的，只有 getter，当然也可以自定义 setter
         -->
+    <div id="app_syntax">
+        <p>Message: {{ message }}</p>
+        <p v-once>Once Message: {{ once_message }}</p>
+        <textarea v-model="tAreaData" name="changed" :id="tArea" cols="30" rows="10" maxlength="140"></textarea>
+        <button type="button" @click="changeMessage">Change Message</button>
 
         <p>Reverse Message: {{ reverseMessage }}</p>
-
-
     </div>
 
+    <h3>Watch</h3>
     <!--  
-    reference: https://cn.vuejs.org/v2/guide/computed.html
-    3. 对于监视机制，vue 还提供了 [watch] 关键字，如下，在 question 变化时会触发
-    question 对应的函数，将变化后的值传入函数中，而函数内部通过异步请求获取结果，
-    再赋值给 question
-    -->
+        reference: https://cn.vuejs.org/v2/guide/computed.html
+        3. 对于监视机制，vue 还提供了 [watch] 关键字，如下，在 question 变化时会触发
+        question 对应的函数，将变化后的值传入函数中，而函数内部通过异步请求获取结果，
+        再赋值给 question
+        -->
     <div id="watch-example">
         <p>
             Ask a yes/no question:
             <input v-model="question">
         </p>
         <p>{{ answer }}</p>
+    </div>
+
+    <h3>Class And Style</h3>
+    <!--  
+    reference: https://cn.vuejs.org/v2/guide/class-and-style.html
+    下面示范了 2 种 class 和 style 的动态绑定，当对应的值是 MDN 规范里的 [truthiness]
+    (https://developer.mozilla.org/en-US/docs/Glossary/Truthy) 时，
+    这个值就会被绑定在标签的 class 或 style 上
+    -->
+    <div id="class-style-bind">
+        <div class="static" v-bind:class="{ active: isActive, 'text-danger': hasError }">
+            <p> Object Class Bind 1</p>
+        </div>
+        <div class="static" v-bind:class="classObject">
+            <p> Object Class Bind 2</p>
+        </div>
+        <div v-bind:style="{ color: activeColor, fontSize: fontSize + 'px' }">
+            <p> Style Bind 1</p>
+        </div>
+        <div v-bind:style="styleObject">
+            <p> Style Bind 2</p>
+        </div>
+    </div>
+
+    <h3>Conditonal</h3>
+    <!--  
+    reference: https://cn.vuejs.org/v2/guide/conditional.html
+    1. vue 里有 v-if，可以作为分支；如果想同时作用于多个标签，那么可以使用 <template>
+    2. vue 会尽量用高效的方法渲染文档。在下面的例子中，默认是会复用 <input> 的
+    3. 如果想让 vue 区分这两个 <input> ，则在标签中添加 key 属性，而 label 是没有这个
+    属性的，所以默认会被替换掉
+    4. vue 还有一个 v-show，这个属性无法用于 <template> ，也不能和 v-else 配合，它的
+    原理是先无视条件创建所有 DOM 节点，然后切换各自的 display 这个 CSS 属性，而不是像
+    v-if 那样有销毁重建 DOM 节点的过程
+    5. 通常来说，v-if 有更高的切换消耗，v-show 有更高的初始化消耗
+    -->
+    <div id="conditional">
+        <p> v-if 作用单个标签： </p>
+        <p v-if="conditionalOk">Yes</p>
+        <p> v-if 作用多个标签： </p>
+        <template v-if="loginType === 'username'">
+            <label>Username</label>
+            <input placeholder="Enter your username">
+        </template>
+        <template v-else>
+            <label>Email</label>
+            <input placeholder="Enter your email address">
+        </template>
+        <button type="button" @click="changeLoginType">Change Message</button>
+        <p> 独立 &lt;input> ：</p>
+        <template v-if="loginType === 'username'">
+            <label>Username</label>
+            <input placeholder="Enter your username" key="username-input">
+        </template>
+        <template v-else>
+            <label>Email</label>
+            <input placeholder="Enter your email address" key="email-input">
+        </template>
+        <button type="button" @click="changeLoginType">Change Message</button>
+        <p> v-show ：</p>
+        <p v-show="conditionalOk">Hello!</p>
+        <p v-show="conditionalNo">Bye!</p>
     </div>
 
     <script type="text/javascript" src="js/index.js"></script>
