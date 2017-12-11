@@ -17,15 +17,56 @@
   <![endif]-->
     <script type="text/javascript" src="js/vue.js"></script>
     <script src="https://unpkg.com/vue"></script>
+    <!-- 异步请求 -->
+    <script src="https://cdn.jsdelivr.net/npm/axios@0.12.0/dist/axios.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/lodash@4.13.1/lodash.min.js"></script>
     <base target="_blank" />
 </head>
 
 <body>
-    <div id="app">
-        <p>{{ message }}</p>
-        <p v-once>{{ once_message }}</p>
+
+    <div id="app_syntax">
+
+        <!--  
+        reference: https://cn.vuejs.org/v2/guide/syntax.html
+        1. 在 vue 中，[el] 与 html 的 div 的 id 绑定
+        2. 所有与 vue 相关的 html 插值、v- 前缀特殊属性值可以在 [data] 和 [methods] 中
+        3. v-bind:xxx 可以缩写为 :xxx，v-on:xxx 可以缩写为 @xxx
+        4. 在具有 v-once 属性的元素里，当数据改变时，插值处的内容不会更新
+        5. 对于所有数值绑定（如第 2 点提到的），vue 提供了 js *表达式*支持
+        -->
+
+        <p>Message: {{ message }}</p>
+        <p v-once>Once Message: {{ once_message }}</p>
         <textarea v-model="tAreaData" name="changed" :id="tArea" cols="30" rows="10" maxlength="140"></textarea>
         <button type="button" @click="changeMessage">Change Message</button>
+
+        <!--  
+        reference: https://cn.vuejs.org/v2/guide/computed.html
+        1. vue 中，[computed] 中的属性会监视着，它依赖的其他 [data] 属性，
+        比如 reverseMessage 依赖于 message，所以当 message 变化时 reverseMessage 也会
+        作出相应变化。需要注意的是，虽然这也可以通过 [methods] 做到，但是 [computed] 具有
+        *缓存功能*，这可以防止后台重复地复杂计算
+        2. [computed] 中的属性默认是只读的，只有 getter，当然也可以自定义 setter
+        -->
+
+        <p>Reverse Message: {{ reverseMessage }}</p>
+
+
+    </div>
+
+    <!--  
+    reference: https://cn.vuejs.org/v2/guide/computed.html
+    3. 对于监视机制，vue 还提供了 [watch] 关键字，如下，在 question 变化时会触发
+    question 对应的函数，将变化后的值传入函数中，而函数内部通过异步请求获取结果，
+    再赋值给 question
+    -->
+    <div id="watch-example">
+        <p>
+            Ask a yes/no question:
+            <input v-model="question">
+        </p>
+        <p>{{ answer }}</p>
     </div>
 
     <script type="text/javascript" src="js/index.js"></script>
