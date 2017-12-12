@@ -101,12 +101,31 @@ var conditionalVue = new Vue({
         loginType: 'username',
     },
     methods: {
-        changeLoginType: function(event) {
-            if(this.loginType === 'username') {
+        changeLoginType: function (event) {
+            if (this.loginType === 'username') {
                 this.loginType = 'email';
             } else {
                 this.loginType = 'username';
             }
         },
+    }
+});
+
+var conditionalVue = new Vue({
+    el: '#forList',
+    data: {
+        parentMessage: 'Parent',
+        items: [
+            { message: 'Foo' },
+            { message: 'Bar' }
+        ],
+        object: {
+            firstName: 'John',
+            lastName: 'Doe',
+            age: 30
+        }
+    },
+    methods: {
+
     }
 });

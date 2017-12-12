@@ -102,9 +102,9 @@
     5. 通常来说，v-if 有更高的切换消耗，v-show 有更高的初始化消耗
     -->
     <div id="conditional">
-        <p> v-if 作用单个标签： </p>
+        <h4> v-if 作用单个标签 </h4>
         <p v-if="conditionalOk">Yes</p>
-        <p> v-if 作用多个标签： </p>
+        <h4> v-if 作用多个标签 </h4>
         <template v-if="loginType === 'username'">
             <label>Username</label>
             <input placeholder="Enter your username">
@@ -114,7 +114,7 @@
             <input placeholder="Enter your email address">
         </template>
         <button type="button" @click="changeLoginType">Change Message</button>
-        <p> 独立 &lt;input> ：</p>
+        <h4> 独立 &lt;input&gt; </h4>
         <template v-if="loginType === 'username'">
             <label>Username</label>
             <input placeholder="Enter your username" key="username-input">
@@ -124,9 +124,44 @@
             <input placeholder="Enter your email address" key="email-input">
         </template>
         <button type="button" @click="changeLoginType">Change Message</button>
-        <p> v-show ：</p>
+        <h4> v-show </h4>
         <p v-show="conditionalOk">Hello!</p>
         <p v-show="conditionalNo">Bye!</p>
+    </div>
+
+
+    <h3>List</h3>
+    <!--  
+    reference: https://cn.vuejs.org/v2/guide/list.html
+    1. vue 里有 v-for，可以迭代 [data] 中的可迭代数据，包括数组、对象
+    2. 建议在使用 v-for 时提供 key，除非遍历输出的 DOM 内容非常简单，
+    或者是刻意依赖默认行为以获取性能上的提升
+    3. 其他 v-for 注意事项如数组、对象变化的问题，v-for 与 v-if 优先级
+    问题，与 filter 的搭配使用，见原地址
+    -->
+    <div id="forList">
+        <h4> v-for </h4>
+        <ul id="dataList">
+            <li v-for="item in items">
+                {{ item.message }}
+            </li>
+        </ul>
+        <ul id="indexList">
+            <li v-for="(item, index) in items">
+                {{ parentMessage }} - {{ index }} - {{ item.message }}
+            </li>
+        </ul>
+        <ul id="v-for-object">
+            <li v-for="value in object">
+                {{ value }}
+            </li>
+            <li v-for="(value, key) in object">
+                {{ key }}: {{ value }}
+            </li>
+            <li v-for="(value, key, index) in object">
+                {{ index }}. {{ key }}: {{ value }}
+            </li>
+        </ul>
     </div>
 
     <script type="text/javascript" src="js/index.js"></script>
