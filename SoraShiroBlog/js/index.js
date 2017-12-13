@@ -1,28 +1,10 @@
-var PostPreviewChild = {
-    template: 
-    '<div class="post-preview">'+
-    '<a href="{{ links }}">'+
-      '<h2 class="post-title">'+
-        '{{ title }}'+
-      '</h2>'+
-      '<h3 class="post-subtitle">'+
-        '{{ subTitle }}'+
-      '</h3>'+
-    '</a>'+
-    '<p class="post-meta">由'+
-      '<a href="#"> Sora Shiro </a>'+
-      '发布于 {{ date }}</p>'+
-    '<hr>'+
-    '</div>',
-    props: ['links', 'title', 'subTitle', 'date'],
-}
-
 var containerVue = new Vue({
     el: '#container',
     components: {
-        'post-preview': PostPreviewChild,
+
     },
     data: {
+        tempPosts: [],
         posts: [
             {
                 id: 1,
@@ -40,8 +22,45 @@ var containerVue = new Vue({
             }
         ]
     },
+    mounted() {
+        this.init();
+    },
     methods: {
-
+        init: function() {
+            var vm = this;
+            axios.get('https://api.github.com/repos/Sora-Shiro/APage/contents/SoraShiroBlog/blog/')
+                .then(function (response) {
+                    var blogDirectories = response.data;
+                    var directories = [];
+                    blogDirectories.forEach(directory => {
+                        var data = {};
+                        data.name = directory.name;
+                        data.url = directory.url;
+                        vm.getBlogs(data);
+                    });
+                })
+                .catch(function (error) {
+                    console.log(error);
+                });
+        },
+        getBlogs: function(data) {
+            var vm = this;
+            axios.get(data.url)
+                .then(function (response) {
+                    var blogs = response.data;
+                    blogs.forEach(blog => {
+                        var blogData = {};
+                        blogData.title = blog.name;
+                        blogData.subTitle = blog.name + 'test';
+                        blogData.links = blog.html_url;
+                        blogData.date = '2017/12/13';
+                        vm.posts.push(blogData);
+                    });
+                })
+                .catch(function (error) {
+                    console.log(error);
+                });
+        }
     },
     computed: {
 
