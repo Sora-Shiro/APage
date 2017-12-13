@@ -50,10 +50,16 @@ var containerVue = new Vue({
                     var blogs = response.data;
                     blogs.forEach(blog => {
                         var blogData = {};
-                        blogData.title = blog.name;
+                        var tempStr = blog.name;
+                        var processStrs = tempStr.split('__');
+                        blogData.title = processStrs[0];
                         blogData.subTitle = blog.name + 'test';
                         blogData.links = blog.html_url;
-                        blogData.date = '2017/12/13';
+                        blogData.date = processStrs[1].substring(0, 4) 
+                        + `/` + processStrs[1].substring(4, 6)
+                        + '/' + processStrs[1].substring(6) + '  '
+                        + String(processStrs[2].substring(0, 2)) +
+                        + ':' + String(processStrs[2].substring(2));
                         vm.posts.push(blogData);
                     });
                 })
