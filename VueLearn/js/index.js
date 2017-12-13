@@ -2,12 +2,13 @@ var appSyntax = new Vue({
     el: '#app_syntax',
     data: {
         tArea: 'dynamic',
+        tAreaData: '',
         message: 'Will change',
         once_message: 'Not change'
     },
     methods: {
         changeMessage: function (event) {
-            if (this.tAreaData === undefined || this.tAreaData.length === 0) {
+            if (this.tAreaData.length === 0) {
                 alert("Cannot be empty!");
             } else {
                 this.message = this.tAreaData;
@@ -24,8 +25,10 @@ var appSyntax = new Vue({
                 }
             },
             set: function (val) {
-                var reverseBack = val.split('').reverse().join('');
-                this.message = reverseBack;
+                if (this.message !== undefined) {
+                    var reverseBack = val.split('').reverse().join('');
+                    this.message = reverseBack;
+                }
             }
         }
     }
@@ -116,8 +119,8 @@ var conditionalVue = new Vue({
     data: {
         parentMessage: 'Parent',
         items: [
-            { message: 'Foo' },
-            { message: 'Bar' }
+            { data: 'Foo' },
+            { data: 'Bar' }
         ],
         object: {
             firstName: 'John',
@@ -127,5 +130,44 @@ var conditionalVue = new Vue({
     },
     methods: {
 
+    }
+});
+
+var eventVue = new Vue({
+    el: '#events',
+    data: {
+        inputData: '',
+    },
+    methods: {
+        submit: function (event) {
+            alert(this.inputData);
+        }
+    }
+});
+
+var formlVue = new Vue({
+    el: '#forms',
+    data: {
+        multiMessage: '',
+        checked: true,
+        checkedNames: [],
+        picked: '',
+        selected: '',
+        multiSelected: [],
+        dynSelected: 'A',
+        options: [
+            { text: 'One', value: 'A' },
+            { text: 'Two', value: 'B' },
+            { text: 'Three', value: 'C' }
+        ],
+        toggle: 'a',
+        a: 'a',
+        b: 'b',
+        pick: '',
+    },
+    methods: {
+        submit: function (event) {
+            alert(this.inputData);
+        }
     }
 });

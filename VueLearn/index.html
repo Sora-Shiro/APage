@@ -143,12 +143,12 @@
         <h4> v-for </h4>
         <ul id="dataList">
             <li v-for="item in items">
-                {{ item.message }}
+                {{ item.data }}
             </li>
         </ul>
         <ul id="indexList">
             <li v-for="(item, index) in items">
-                {{ parentMessage }} - {{ index }} - {{ item.message }}
+                {{ parentMessage }} - {{ index }} - {{ item.data }}
             </li>
         </ul>
         <ul id="v-for-object">
@@ -163,6 +163,91 @@
             </li>
         </ul>
     </div>
+
+    <h3>Events</h3>
+    <!--  
+    reference: https://cn.vuejs.org/v2/guide/events.html
+    事件响应 - 这个感觉没什么好说的，主要是一些事件修饰符和按键修饰符，后者例子如下，
+    只有在 `keyCode` 是 13 时调用 `vm.submit()`
+    -->
+    <div id="events">
+        <input v-model='inputData' v-on:keyup.13="submit">
+    </div>
+
+    <h3>Forms</h3>
+    <!--  
+    reference: https://cn.vuejs.org/v2/guide/forms.html
+    1. 在前面例子其实有出现 v-model，它在表单控件元素上创建双向数据绑定，会根据控件
+    类型自动选取正确的方法来更新元素
+    -->
+    <div id="forms">
+        <h4>多行文本</h4>
+        <span>Multiline message is:</span>
+        <p style="white-space: pre-line;">{{ multiMessage }}</p>
+        <br>
+        <textarea v-model="multiMessage" placeholder="add multiple lines"></textarea>
+        <h4>复选框</h4>
+        <input type="checkbox" id="checkbox" v-model="checked">
+        <label for="checkbox">{{ checked }}</label>
+        <h4>多个勾选框，绑定到同一个数组</h4>
+        <div id='multiCheck'>
+            <input type="checkbox" id="jack" value="Jack" v-model="checkedNames">
+            <label for="jack">Jack</label>
+            <input type="checkbox" id="john" value="John" v-model="checkedNames">
+            <label for="john">John</label>
+            <input type="checkbox" id="mike" value="Mike" v-model="checkedNames">
+            <label for="mike">Mike</label>
+            <br>
+            <span>Checked names: {{ checkedNames }}</span>
+        </div>
+        <h4>单选按钮</h4>
+        <div id="radioBtn">
+            <input type="radio" id="one" value="One" v-model="picked">
+            <label for="one">One</label>
+            <br>
+            <input type="radio" id="two" value="Two" v-model="picked">
+            <label for="two">Two</label>
+            <br>
+            <span>Picked: {{ picked }}</span>
+        </div>
+        <h4>单选列表</h4>
+        <div id="radioList">
+            <select v-model="selected">
+                <option disabled value="">请选择</option>
+                <option>A</option>
+                <option>B</option>
+                <option>C</option>
+            </select>
+            <span>Selected: {{ selected }}</span>
+        </div>
+        <h4>多选列表</h4>
+        <div id="multiList">
+            <select v-model="multiSelected" multiple style="width: 50px;">
+                <option>A</option>
+                <option>B</option>
+                <option>C</option>
+            </select>
+            <br>
+            <span>Selected: {{ multiSelected }}</span>
+        </div>
+        <h4>动态选项 v-for</h4>
+        <div id="dynamicVFor">
+            <select v-model="dynSelected">
+                <option v-for="option in options" v-bind:value="option.value">
+                    {{ option.text }}
+                </option>
+            </select>
+            <span>Selected: {{ dynSelected }}</span>
+        </div>
+        <h4>值绑定</h4>
+        <input type="checkbox" v-model="toggle" v-bind:true-value="a" v-bind:false-value="b">
+        <label for="checkbox">{{ toggle }}</label>
+        <p></p>
+        <input type="radio" v-model="pick" v-bind:value="a">
+        <input type="radio" v-model="pick" v-bind:value="b">
+        <label for="checkbox">{{ pick }}</label>
+    </div>
+
 
     <script type="text/javascript" src="js/index.js"></script>
 </body>
