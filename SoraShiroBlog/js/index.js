@@ -7,28 +7,6 @@ function sortByProperty(property) {
     return sortfun;
 }
 
-function PostList() {
-    this.initialize.apply(this, arguments);
-}
-
-PostList.prototype = Object.create(Object.prototype);
-PostList.prototype.constructor = PostList;
-
-PostList.prototype.initialize = function () {
-    this.postList = [];
-};
-
-PostList.prototype.pushPost = function (post) {
-    this.postList.push(post);
-    this.postList.sortByProperty(`rawData`);
-}
-
-PostList.prototype.getPostList = function () {
-    return this.postList;
-}
-
-var $SoraShiroPostList = new PostList();
-
 var containerVue = new Vue({
     el: '#container',
     components: {
