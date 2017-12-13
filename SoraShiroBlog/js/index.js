@@ -1,3 +1,34 @@
+function sortByProperty(property) {
+    function sortfun(obj1, obj2) {
+        if (obj1[property] > obj2[property]) return -1
+        else if (obj1[property] < obj2[property]) return 1
+        else if (obj1[property] == obj2[property]) return 0
+    }
+    return sortfun;
+}
+
+function PostList() {
+    this.initialize.apply(this, arguments);
+}
+
+PostList.prototype = Object.create(Object.prototype);
+PostList.prototype.constructor = PostList;
+
+PostList.prototype.initialize = function () {
+    this.postList = [];
+};
+
+PostList.prototype.pushPost = function (post) {
+    this.postList.push(post);
+    this.postList.sortByProperty(`rawData`);
+}
+
+PostList.prototype.getPostList = function () {
+    return this.postList;
+}
+
+var $SoraShiroPostList = new PostList();
+
 var containerVue = new Vue({
     el: '#container',
     components: {
@@ -5,26 +36,16 @@ var containerVue = new Vue({
     },
     data: {
         tempPosts: [],
-        posts: [
-            {
-                id: 1,
-                links: 'post.html',
-                title: '安卓面试',
-                date: '2017/12/13',
-            },
-            {
-                id: 2,
-                links: 'post.html',
-                title: 'Java 算法题选',
-                date: '2017/12/13',
-            }
-        ]
+        rawPosts: [],
+    },
+    computed: {
+        
     },
     mounted() {
         this.init();
     },
     methods: {
-        init: function() {
+        init: function () {
             var vm = this;
             axios.get('https://api.github.com/repos/Sora-Shiro/APage/contents/SoraShiroBlog/blog/')
                 .then(function (response) {
@@ -41,7 +62,7 @@ var containerVue = new Vue({
                     console.log(error);
                 });
         },
-        getBlogs: function(data) {
+        getBlogs: function (data) {
             var vm = this;
             axios.get(data.url)
                 .then(function (response) {
@@ -49,25 +70,25 @@ var containerVue = new Vue({
                     blogs.forEach(blog => {
                         var blogData = {};
                         var tempStr = blog.name;
-                        var processStrs = tempStr.split('__');
+                        var processStrs = tempStr.split(`__`);
                         blogData.title = processStrs[0];
                         blogData.links = blog.html_url;
-                        console.log(processStrs);
-                        blogData.date = processStrs[1].substring(0, 4) 
-                        + `/` + processStrs[1].substring(4, 6)
-                        + '/' + processStrs[1].substring(6) + '  '
-                        + String(processStrs[2].substring(0, 2)) +
-                        + ':' + String(processStrs[2].substring(2));
-                        vm.posts.push(blogData);
+                        blogData.rawDate = processStrs[1] + processStrs[2].substring(0, 4);
+                        blogData.rawDate = Number(blogData.rawDate);
+                        blogData.date = processStrs[1].substring(0, 4)
+                            + `/` + processStrs[1].substring(4, 6)
+                            + `/` + processStrs[1].substring(6) + `  `
+                            + processStrs[2].substring(0, 2);
+                        blogData.date += `:` + processStrs[2].substring(2, 4);
+                        vm.rawPosts.push(blogData);
+                        vm.rawPosts.sort(sortByProperty(`rawDate`));
                     });
                 })
                 .catch(function (error) {
                     console.log(error);
                 });
-        }
+        },
     },
-    computed: {
 
-    }
 });
 
