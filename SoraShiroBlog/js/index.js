@@ -10,14 +10,12 @@ var containerVue = new Vue({
                 id: 1,
                 links: 'post.html',
                 title: '安卓面试',
-                subTitle: '这是采自……',
                 date: '2017/12/13',
             },
             {
                 id: 2,
                 links: 'post.html',
                 title: 'Java 算法题选',
-                subTitle: '这是',
                 date: '2017/12/13',
             }
         ]
@@ -53,8 +51,8 @@ var containerVue = new Vue({
                         var tempStr = blog.name;
                         var processStrs = tempStr.split('__');
                         blogData.title = processStrs[0];
-                        blogData.subTitle = blog.name + 'test';
                         blogData.links = blog.html_url;
+                        console.log(processStrs);
                         blogData.date = processStrs[1].substring(0, 4) 
                         + `/` + processStrs[1].substring(4, 6)
                         + '/' + processStrs[1].substring(6) + '  '
