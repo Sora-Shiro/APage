@@ -59,15 +59,7 @@ var containerVue = new Vue({
                             + processStrs[2].substring(0, 2);
                         blogData.date += `:` + processStrs[2].substring(2, 4);
                         vm.rawPosts.push(blogData);
-                        _.debounce(
-                            function () {
-                                vm.rawPosts.sort(sortByProperty(`rawDate`));
-                            },
-                            // This is the number of milliseconds we wait for the
-                            // user to stop typing.
-                            1000
-                        );
-                        
+                        vm.rawPosts.sort(sortByProperty(`rawDate`));
                     });
                 })
                 .catch(function (error) {
