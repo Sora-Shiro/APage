@@ -1,0 +1,17 @@
+{
+  "name": "helloworld",
+  "version": "1.0.0",
+  "description": "A test project using koa2",
+  "main": "helloWorld.js",
+  "scripts": {
+    "test": "node hellowWorld.js"
+  },
+  "keywords": [
+    "koa2"
+  ],
+  "author": "SoraShiro",
+  "license": "MIT",
+  "dependencies": {
+    "koa": "^2.4.1"
+  }
+}
